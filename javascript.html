@@ -5,41 +5,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
 <script>
-/**
- コード.jsのgetSelectListFromSS()を読んで、スプレッドシートのデータをもとに、セレクトボックスを構築する
-*/
-function getSelectList() {
-    try {
-        google.script.run
-            .withSuccessHandler(function(result) {
-
-                console.log("result", result);
-
-                var select = document.getElementById('select_id3');
-                var option = document.createElement('option');
-                option.setAttribute('value', '');
-                option.setAttribute('selected', true);
-                option.innerHTML = '未選択';
-                select.appendChild(option);
-
-                for (var i = 0; i < result.data.length; i++) {
-                    option = document.createElement('option');
-                    option.setAttribute('value', i + 1);
-                    option.innerHTML = result.data[i];
-                    select.appendChild(option);
-                }
-
-
-            })
-            .withFailureHandler(function(result) {
-                toastr.error('リストの取得に失敗しました。', result);
-            })
-            .getSelectListFromMasterSS();
-
-    } catch (e) {
-        toastr.error(e);
-    }
-}
 
 /**
  コード.jsのregisterSSByFormData()を呼んで、フォームの内容をスプレッドシートに登録する
@@ -54,21 +19,11 @@ function sendData() {
         elemntIFrame.setAttribute('scrolling', 'no');
         elemntIFrame.setAttribute('frameborder', '0');
 
-//        console.log("document.getElementById('select_id2').selectedIndex)", document.getElementById('select_id2').selectedIndex);
 
         var data = [];
         data[0] = 'dummy';
         data[1] = document.getElementById('input_id1').value;
         data[2] = document.getElementById('input_id2').value;
-        data[3] = document.getElementById('input_id3').checked;
-        data[4] = document.getElementById('input_id4').checked;
-        data[5] = document.getElementById('input_id5').checked;
-//        data[6] = document.getElementById('input_id6').checked;
-//        data[7] = document.getElementById('input_id7').checked;
-//        data[8] = document.getElementById('input_id8').checked;
-        data[6] = document.getElementById('select_id1').options[document.getElementById('select_id1').selectedIndex].text;
-//        data[10] = getMultipleSelectedText(document.getElementById('select_id2').options);
-//        data[11] = document.getElementById('select_id3').options[document.getElementById('select_id3').selectedIndex].text;
 
         console.log("data", data);
 
@@ -95,18 +50,6 @@ function sendData() {
 
 }
 
-// multipeセレクトをカンマ区切りのテキストにして取得
-function getMultipleSelectedText(selectOptions){
-  console.log(selectOptions, selectOptions.length);
-  var arr = [];
-  for(var i = 0; i < selectOptions.length; i++) {
-    if(selectOptions[i].selected){
-      arr.push(selectOptions[i].value);
-    }
-  }
-  return arr.join(',');
-}
-
 // 処理中アイコン表示・非表示
 function processing(processing) {
     if (processing) {
@@ -126,15 +69,13 @@ $(function() {
     $('#myForm').validator();
     // 処理中アイコン非表示
     processing(false);
-    // セレクトボックスのリストを動的に取得する
-    getSelectList();
 
     // submit時のイベント登録
     $('#myForm').validator().on('submit', function(e) {
         if (document.getElementById('send_button').className.indexOf("disabled") != -1) {
             // submit用のボタンのスタイルにdisabledが設定されていればバリデーションエラー
         } else {
-            // バリデーションエラーでなければ送信
+// バリデーションエラーでなければ送信
             sendData();
         }
     })

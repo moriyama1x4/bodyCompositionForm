@@ -10,7 +10,7 @@ function registerSSByFormData(data) {
 
   Logger.log("data = %s", data);
 
-  var datasheet = SpreadsheetApp.openById('13D8hs1-GcDxbsCMZ2SaZ0EwrjK58G1QACoEDdzy3Zl0').getSheetByName('出力');
+  var datasheet = SpreadsheetApp.openById('13x4WA5MlnL6kz9ikg7QIguA_9h58q3sb5IXdU4ID80Q').getSheetByName('test');
   var now = new Date();
 
   var i = datasheet.getLastRow() + 1;
@@ -29,19 +29,4 @@ function registerSSByFormData(data) {
   result = true;
 
   return {data: true};
-}
-
-function getSelectListFromMasterSS() {
-  var selectList = [];
-
-  // マスタデータシートを取得
-  var datasheet = SpreadsheetApp.openById('13D8hs1-GcDxbsCMZ2SaZ0EwrjK58G1QACoEDdzy3Zl0').getSheetByName('データ');
-  // B列2行目のデータからB列の最終行までを取得 
-  var lastRow = datasheet.getRange("B:B").getValues().filter(String).length - 1;
-  Logger.log("lastRow = %s", lastRow);
-  // B列2行目のデータからB列の最終行までを1列だけ取得 
-  selectList = datasheet.getRange(2, 2, lastRow, 1).getValues();
-  Logger.log("selectList = %s", selectList); 
-
-  return {data: selectList};
 }
