@@ -12,39 +12,137 @@
   </nav>
 
 <div class="container">
-	
-			<form class="form-horizontal" id="myForm" onsubmit="return false;">
-			<div class="panel panel-default">
-        <div class="panel-heading">フォーム1</div>
-        <div class="panel-body">
+	<form class="form-horizontal" id="myForm" onsubmit="return false;">
+		<div class="panel panel-default">
+			<div class="panel-heading">体脂肪</div>
+			<div class="panel-body">
 				<div class="form-group">
-					<label class="control-label col-xs-3" for="input_id1">氏名</label>
+					<label class="control-label col-xs-3" for="input_id1">全体(%)</label>
 					<div class="col-xs-3">
 						<input type="number" class="form-control" id="input_id1" step="0.1" required>
 						<div class="help-block with-errors"></div>
 					</div>
 				</div>
-				
-		</div>
-	</div>
-				
 				<div class="form-group">
-					<label class="control-label col-xs-3" for="input_id2">パスワード</label>
+					<label class="control-label col-xs-3" for="input_id2">体幹</label>
 					<div class="col-xs-3">
 						<input type="number" class="form-control" id="input_id2" step="0.1" required>
 						<div class="help-block with-errors"></div>
 					</div>
 				</div>
-
-
 				<div class="form-group">
-					<div class="col-xs-offset-3 col-xs-9">
-						<button id="send_button" type="submit" class="btn btn-primary btn-large">
-						  <i class="fa fa-send fa-lg"></i>送信
-						</button>
+					<label class="control-label col-xs-3" for="input_id3">左腕</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id3" step="0.1" required>
+						<div class="help-block with-errors"></div>
 					</div>
 				</div>
-			</form>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id4">右腕</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id4" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id5">左脚</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id5" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id6">右脚</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id6" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">筋量</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id7">体幹</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id7" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id8">左腕</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id8" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id9">右腕</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id9" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id10">左脚</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id10" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id11">右脚</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id11" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">総合</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id12">体重</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id12" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id13">体水分(%)</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id13" step="0.1" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id14">内脂Lv</label>
+					<div class="col-xs-3">
+						<input type="number" class="form-control" id="input_id14" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" for="input_id15">基礎代謝</label>
+					<div class="col-xs-4">
+						<input type="number" class="form-control" id="input_id15" required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+			</div>
+		</div>		
+
+
+		<div class="form-group">
+			<div class="col-xs-offset-0 col-xs-9">
+				<button id="send_button" type="submit" class="btn btn-primary btn-large">
+				  <i class="fa fa-send fa-lg"></i>送信
+				</button>
+			</div>
+		</div>
+	</form>
 <i id="processing" class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
 </div>
 <?!= HtmlService.createHtmlOutputFromFile('javascript').getContent(); ?>

@@ -25,7 +25,11 @@ function registerSSByFormData(data) {
   datasheet.getRange(i,  9).setValue(data[ 9]);
   datasheet.getRange(i, 10).setValue(data[10]);
   datasheet.getRange(i, 11).setValue(data[11]);
-  datasheet.getRange(i,  12).setValue(Utilities.formatDate(now, 'Asia/Tokyo', 'yyyy/MM/dd HH:mm:ss'));
+  datasheet.getRange(i, 12).setValue(data[12]);
+  datasheet.getRange(i, 13).setValue(data[13]);
+  datasheet.getRange(i, 14).setValue(data[14]);
+  datasheet.getRange(i, 15).setValue(data[15]);
+  datasheet.getRange(i,  16).setValue(Utilities.formatDate(now, 'Asia/Tokyo', 'yyyy/MM/dd'));
   result = true;
 
   return {data: true};
